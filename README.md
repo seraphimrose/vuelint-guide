@@ -140,7 +140,7 @@ text</component>
 </template>
 ```
 
-## 属性顺序 (order of props in tags)
+## 属性顺序 (order-of-props-in-tags)
 ```html
 <!-- recommended -->
 <!-- '|' means you can only use one of them -->
@@ -236,7 +236,7 @@ export default {
 
 ```
 
-## 不在模板中引入复杂逻辑 (simple logic in template)
+## 不在模板中引入复杂逻辑 (simple-logic-in -template)
 ```html
 <!-- Bad -->
 <template>
@@ -267,7 +267,7 @@ export default {
 ```javascript
 // filter: The data is ready to show, but it won't be shown to UI by raw, may be formatted.
 
-// computed: Computing data for avoiding describing complex logic repeatedly (especially complex logic in template).
+// computed: Computing data for avoiding describing complex logic repeatedly (especially complex logic in template).
 
 // methods: Other functions and handlers, and params-needed 'computed'.
 ```
