@@ -169,7 +169,7 @@ text</component>
   :value="obj.value" />
 ```
 
-## 给组件的属性赋予初始值 (props-default-value)
+## 给组件的属性赋予初始值 (props-default-value)
 ```html
 <template>
   <div>Hello, {{ name }}</div>
