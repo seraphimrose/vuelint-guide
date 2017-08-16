@@ -20,16 +20,16 @@ export default {
 
 ```html
 <!-- Bad -->
-<component></component>
+<foo></foo>
 
 <!-- Bad -->
-<component>
+<foo>
 
 <!-- Bad -->
-<component/>
+<foo/>
 
 <!-- Good -->
-<component />
+<foo />
 ```
 
 ## 模板内组件名和属性使用短横线风格 (kebab-case)
@@ -42,65 +42,65 @@ export default {
 <my-component my-props="foo" />
 ```
 
-## 多属性标签风格 (multi-props-tag-styles)
+## 多属性标签风格 (multi-props-styles)
 
 ```html
 <!-- bad -->
-<component foo="a" bar="b"/>
+<foo foo="a" bar="b"/>
 
 <!-- bad -->
-<component foo="a"
+<foo foo="a"
   bar="b" />
 
 <!-- ok -->
-<component foo="a" bar="b" />
+<foo foo="a" bar="b" />
 
 <!-- ok -->
-<component
+<foo
   foo="a"
   bar="b"
 />
 
 <!-- best -->
-<component
+<foo
   foo="a"
   bar="b" />
 
 <!-- bad -->
-<component
+<foo
   foo="a"
   bar="b">text
-</component>
+</foo>
 
 <!-- bad -->
-<component
+<foo
   foo="a"
   bar="b">
-text</component>
+text</foo>
 
 <!-- ok -->
-<component
+<foo
   foo="a"
   bar="b"
->text</component>
+>text</foo>
 
 <!-- ok -->
-<component
+<foo
   foo="a"
   bar="b"
 >
   text
-</component>
+</foo>
 
 <!-- best -->
-<component
+<foo
   foo="a"
   bar="b">
   text
-</component>
+</foo>
 ```
 
-## 模板绑定的 {{ }} 前后都应该有空格 (space-before-brackets)
+## 模板绑定的 {{ }} 与变量间有空格 (space-between-brackets-and-var)
 ```html
 <!-- Bad -->
 <div>{{data}}</div>
@@ -112,40 +112,40 @@ text</component>
 ## 不使用js的字符串模板拼接动态数据 (no-js-template)
 ```html
 <!-- Bad -->
-<component>
+<div>
   {{ `pay for ${price}` }}
-</component>
+</div>
 
 <!-- Good -->
-<component>
+<div>
   pay for {{ price }}
-</component>
+</div>
 ```
 
 ## v-for属性 (v-for)
 ```html
 <!-- Bad -->
-<component v-for="item in list" />
+<foo v-for="item in list" />
 
 <!-- Bad -->
-<component
+<foo
   v-for="item in list"
   v-if="showList" />
 
 <!-- Good -->
 <template v-if="showList">
-  <component
+  <foo
     v-for="item in list"
     :key="item.id" />
 </template>
 ```
 
-## 属性顺序 (order-of-props-in-tags)
+## 属性顺序 (order-of-props)
 ```html
 <!-- recommended -->
 <!-- '|' means you can only use one of them -->
 <!-- '/' means you can order them as you like -->
-<component
+<foo
   v-for | v-if | v-else
   @click
   key
@@ -157,13 +157,30 @@ text</component>
 
 ```
 
-## 不宜直接将整个对象传入组件 (simple-props)
+## 不在模板中使用this (no-this-in-template)
 ```html
 <!-- Bad -->
-<component :obj="obj" />
+<foo :name="this.name" />
 
 <!-- Good -->
-<component
+<foo :name="name" />
+
+<script>
+export default {
+  data() {
+    return { name: 'bar' }
+  }
+}
+</script>
+```
+
+## 不宜直接将整个对象传入组件 (config-destruction)
+```html
+<!-- Bad -->
+<foo :obj="obj" />
+
+<!-- Good -->
+<foo
   :id="obj.id"
   :name="obj.name"
   :value="obj.value" />
@@ -199,17 +216,18 @@ export default {
 ```
 
 
-## 组件内属性的顺序 (props-order-in-components)
+## 组件内属性的顺序 (order-in-components)
 ```javascript
 // just recommend
 export default {
   name: 'Component',
 
+  components: {},
+
   props: {},
   mixins: {},
   extends: {},
 
-  components: {},
 
   data() {},
   computed: {},
