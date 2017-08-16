@@ -1,8 +1,6 @@
 # vuelint-guide
 
-[JSX-styled can refer to the React guide]
-
-## 使用单文件组件 (single-file-components)
+* **使用单文件组件(single-file-components)**
 
 ```html
 <template>
@@ -16,7 +14,7 @@ export default {
 </script>
 ```
 
-## 采用自闭合风格的标签 (self-closed)
+* **采用自闭合风格的标签 (self-closed)**
 
 ```html
 <!-- Bad -->
@@ -32,7 +30,7 @@ export default {
 <foo />
 ```
 
-## 模板内组件名和属性使用短横线风格 (kebab-case)
+* **模板内组件名和属性使用短横线风格(((kebab-case)**
 
 ```html
 <!-- Bad -->
@@ -42,7 +40,7 @@ export default {
 <my-component my-props="foo" />
 ```
 
-## 多属性标签风格 (multi-props-styles)
+* **多属性标签风格 (multi-props-styles)**
 
 ```html
 <!-- bad -->
@@ -100,7 +98,7 @@ text</foo>
 </foo>
 ```
 
-## 模板绑定的 {{ }} 与变量间有空格 (space-between-brackets-and-var)
+* **模板绑定的 {{ }} 与变量间有空格 (space-between-brackets-and-var)**
 ```html
 <!-- Bad -->
 <div>{{data}}</div>
@@ -109,7 +107,7 @@ text</foo>
 <div>{{ data }}</div>
 ```
 
-## 不使用js的字符串模板拼接动态数据 (no-js-template)
+* **不使用js的字符串模板拼接动态数据 (no-js-template)**
 ```html
 <!-- Bad -->
 <div>
@@ -122,7 +120,7 @@ text</foo>
 </div>
 ```
 
-## v-for属性 (v-for)
+* **v-for属性 (v-for)**
 ```html
 <!-- Bad -->
 <foo v-for="item in list" />
@@ -140,7 +138,7 @@ text</foo>
 </template>
 ```
 
-## 属性顺序 (order-of-props)
+* **属性顺序 (order-of-props)**
 ```html
 <!-- recommended -->
 <!-- '|' means you can only use one of them -->
@@ -157,7 +155,7 @@ text</foo>
 
 ```
 
-## 不在模板中使用this (no-this-in-template)
+* **不在模板中使用this (no-this-in-template)**
 ```html
 <!-- Bad -->
 <foo :name="this.name" />
@@ -174,7 +172,7 @@ export default {
 </script>
 ```
 
-## 不宜直接将整个对象传入组件 (config-destruction)
+* **不宜直接将整个对象传入组件 (config-destruction)**
 ```html
 <!-- Bad -->
 <foo :obj="obj" />
@@ -186,7 +184,7 @@ export default {
   :value="obj.value" />
 ```
 
-## 给组件的属性赋予初始值 (props-default-value)
+* **给组件的属性赋予初始值 (props-default-value)**
 ```html
 <template>
   <div>Hello, {{ name }}</div>
@@ -204,7 +202,7 @@ export default {
 </script>
 ```
 
-## 尽量避免使用this.$refs与this.$parent实现组件通信 (avoid-refs-and-parent)
+* **尽量避免使用this.$refs与this.$parent实现组件通信 (avoid-refs-and-parent)**
 
 ```javascript
 // bad
@@ -216,7 +214,7 @@ export default {
 ```
 
 
-## 组件内属性的顺序 (order-in-components)
+* **组件内属性的顺序 (order-in-components)**
 ```javascript
 // just recommend
 export default {
@@ -254,7 +252,7 @@ export default {
 
 ```
 
-## 不在模板中引入复杂逻辑 (simple-logic-in -template)
+* **不在模板中引入复杂逻辑 (simple-logic-in -template)**
 ```html
 <!-- Bad -->
 <template>
@@ -281,7 +279,7 @@ export default {
 </script>
 ```
 
-## 不要混用 filter、computed、methods (good-use-of-fcm)
+* **不要混用 filter、computed、methods (good-use-of-fcm)**
 ```javascript
 // filter: The data is ready to show, but it won't be shown to UI by raw, may be formatted.
 
