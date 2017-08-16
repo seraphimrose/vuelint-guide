@@ -30,7 +30,7 @@ export default {
 <foo />
 ```
 
-* **模板内组件名和属性使用短横线风格(((kebab-case)**
+* **模板内组件名和属性使用短横线风格(kebab-case)**
 
 ```html
 <!-- Bad -->
